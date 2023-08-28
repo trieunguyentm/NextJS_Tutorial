@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Table from 'react-bootstrap/Table';
+import useSWR from 'swr';
 import axios from 'axios';
 
 interface Data {
@@ -9,20 +10,25 @@ interface Data {
     content: string;
 }
 
-const AppTable = () => {
-    const [listData, setListData] = useState<Data[] | null>(null);
+const fetcher = async (url: string) => {
+    const response = await axios.get(url);
+    return response.data;
+};
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get('http://localhost:8000/blogs');
-                setListData(response.data);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-        fetchData();
-    }, []);
+const AppTable = () => {
+    const { data: listData, error, isLoading } = useSWR<Data[]>('http://localhost:8000/blogs', fetcher, {
+        revalidateIfStale: false,
+        revalidateOnFocus: false,
+        revalidateOnReconnect: false
+    });
+
+    if (error) {
+        return "An error has occurred";
+    }
+
+    if (isLoading) {
+        console.log('Loading....');
+    }
 
     return (
         <Table striped bordered hover>
