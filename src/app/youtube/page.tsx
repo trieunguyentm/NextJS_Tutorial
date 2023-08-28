@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { useRouter } from 'next/navigation'
+import { Button } from 'react-bootstrap'
 
 const YoutubePage = () => {
     const router = useRouter()
@@ -14,9 +15,7 @@ const YoutubePage = () => {
                 YoutubePage
             </div>
             <div>
-                <button onClick={() => handleClickHome()}>
-                    Go Home
-                </button>
+                <Button variant='primary' onClick={handleClickHome}>Go Home</Button>
             </div>
         </div>
     )
