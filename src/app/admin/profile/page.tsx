@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const ProfileAdminPage = () => {
   return (
@@ -6,4 +6,4 @@ const ProfileAdminPage = () => {
   )
 }
 
-export default ProfileAdminPage
+export default ProfileAdminPage;

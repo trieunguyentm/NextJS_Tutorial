@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const AdminPage = () => {
     return (
@@ -6,4 +6,4 @@ const AdminPage = () => {
     )
 }
 
-export default AdminPage
+export default AdminPage;

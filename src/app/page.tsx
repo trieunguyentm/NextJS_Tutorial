@@ -1,20 +1,22 @@
-import Link from 'next/link'
-import borderColor from '../styles/app.module.css'
+'use client'
+import AppTable from '@/components/app.table';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div style={{ marginLeft: '40px' }}>
+    <div>
       <ul>
-        <li style={{ margin: "20px 0" }} className={borderColor['red-border']}>
+        <li style={{ margin: "20px 0" }}>
           <Link href={"/facebook"}>Facebook</Link>
         </li>
-        <li style={{ margin: "20px 0" }} className={borderColor['green-border']}>
+        <li style={{ margin: "20px 0" }} >
           <Link href={"/youtube"}>Youtube</Link>
         </li>
-        <li style={{ margin: "20px 0" }} className={borderColor['blue-border']}>
+        <li style={{ margin: "20px 0" }} >
           <Link href={"/tiktok"}>Tiktok</Link>
         </li>
       </ul>
+      <AppTable />
     </div>
   )
 }

@@ -1,12 +1,12 @@
 'use client'
-import React from 'react'
-import { useRouter } from 'next/navigation'
-import { Button } from 'react-bootstrap'
+import React from 'react';
+import { useRouter } from 'next/navigation';
+import { Button } from 'react-bootstrap';
 
 const FacebookPage = () => {
-    const router = useRouter()
+    const router = useRouter();
     const handleClickHome = () => {
-        router.push("/")
+        router.push("/");
     }
 
     return (
@@ -21,4 +21,4 @@ const FacebookPage = () => {
     )
 }
 
-export default FacebookPage
+export default FacebookPage;
