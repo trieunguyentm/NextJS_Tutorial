@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Link from 'next/link';
+import Appcss from '../styles/app.module.css'
 
 const AppHeader = () => {
 
@@ -25,7 +26,7 @@ const AppHeader = () => {
                     </Nav>
                 </Navbar.Collapse>
             </Container>
-        </Navbar>
+        </Navbar >
     )
 }
 

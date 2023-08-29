@@ -1,7 +1,7 @@
 const AppFooter = () => {
     return (
         <div style={{ backgroundColor: 'gray', textAlign: 'center' }}>
-            Learn NextJS
+            <strong>Learn NextJS</strong>
         </div>
     )
 }

@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AppHeader from '@/components/app.header';
 import AppFooter from '@/components/app.footer';
 import Container from 'react-bootstrap/Container';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className} suppressHydrationWarning={true}>
-        <header>
+        <header style={{ position: 'sticky', top: 0 }}>
           <AppHeader />
         </header>
         <Container>
@@ -30,6 +32,11 @@ export default function RootLayout({
         <footer>
           <AppFooter />
         </footer>
+        <ToastContainer
+          autoClose={1000}
+          position='top-center'
+          theme='dark'
+        />
       </body>
     </html>
   )
